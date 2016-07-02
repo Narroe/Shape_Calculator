@@ -2,12 +2,11 @@
 A small program that works out the dimensions of a shape based on a provided variable.
 SHAPE CALCULATOR README
 
-    PROJECT STATUS
-	
+# Project Status
+
 actively worked on. (as of 27/06/2016)
 
-
-    THE PROGRAM
+# The Program
 	
 Shape Calculator is a small terminal based program
 that works out the various measurements of shapes
@@ -18,15 +17,12 @@ side of a square, it can provide the user with the square's
 area and circumference. And in the case of a cube, it can also
 provide the cube's volume.
 
-
-    TOOLS
+# Tools
+	Language: C++
+	IDE: Code Blocks
 	
-        Language: C++
-        IDE: Code Blocks
+# End Goal
 
-
-    END GOAL
-	
 The end goal for this project is to have a program 
 that can calculate dimensions for the following shapes:
 
