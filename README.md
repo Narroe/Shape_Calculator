@@ -1,6 +1,5 @@
 # Shape_Calculator
 A small program that works out the dimensions of a shape based on a provided variable.
-SHAPE CALCULATOR README
 
 # Project Status
 
