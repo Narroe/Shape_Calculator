@@ -28,7 +28,7 @@ that can calculate dimensions for the following shapes:
 	2D:
 			circle        [DONE]
 			square        [DONE]
-			rectangle     [NOT_DONE]
+			rectangle     [IN_PROGRESS]
 			triangle      [NOT_DONE]
 			trapezium     [NOT_DONE]
 			parallelogram [NOT_DONE]
