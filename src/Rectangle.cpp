@@ -1,61 +1,68 @@
-// Shape: Square
+// Shape: Rectangle
 #include<iostream>
 #include<string>
 #include<cmath>
-#include"Square.h"
+#include"Rectangle.h"
 using namespace std;
 
-Square::Square()
+Rectangle::Rectangle()
 {
     printMsg_selectKnownVar();
 }
 
-Square::~Square()
+Rectangle::~Rectangle()
 {
     width = 0;
     height = 0;
     area = 0;
     circumference = 0;
     knownVar = '0';
-    cout << "\"Square\" class object destroyed." << endl;
+    cout << "\"Rectangle\" class object destroyed." << endl;
 }
 
-void Square::printMsg_selectKnownVar()
+void Rectangle::printMsg_selectKnownVar()
 {
-    std::cout << "\n[shape] Square" << std::endl;
-    std::cout << "enter known variable type:" << std::endl;
+    std::cout << "\n[shape] Rectangle" << std::endl;
+    std::cout << "[this shape requires TWO known variable types]" << std::endl;
+    std::cout << "enter 1st known variable type:" << std::endl;
     std::cout << "[w]idth || [h]eight || [a]rea || [c]ircumference\n" << std::endl;
 }
 
-void Square::process_inputString(string input)
+void Rectangle::printMsg_selectKnownVar_2()
+{
+    std::cout << "enter 2nd known variable type:" << std::endl;
+    std::cout << "[w]idth || [h]eight || [a]rea || [c]ircumference\n" << std::endl;
+}
+
+void Rectangle::process_inputString(string input)
 {
     if (input == "w" || input == "width")
     {
         cout << "width: ";
         knownVar = 'w';
-        process_width(get_num_square());
-        printMsg_squareStats();
+        process_width(get_num_rectangle());
+        printMsg_rectangleStats();
     }
     else if (input == "h" || input == "height")
     {
         cout << "height: ";
         knownVar = 'h';
-        process_height(get_num_square());
-        printMsg_squareStats();
+        process_height(get_num_rectangle());
+        printMsg_rectangleStats();
     }
     else if (input == "a" || input == "area")
     {
         cout << "area: ";
         knownVar = 'a';
-        process_area(get_num_square());
-        printMsg_squareStats();
+        process_area(get_num_rectangle());
+        printMsg_rectangleStats();
     }
     else if (input == "c" || input == "circumference")
     {
         cout << "circumference: ";
         knownVar = 'c';
-        process_circumference(get_num_square());
-        printMsg_squareStats();
+        process_circumference(get_num_rectangle());
+        printMsg_rectangleStats();
     }
     else
     {
@@ -63,7 +70,7 @@ void Square::process_inputString(string input)
     }
 }
 
-void Square::process_width(double w)
+void Rectangle::process_width(double w)
 {
     width = w;
     height = width;
@@ -71,7 +78,7 @@ void Square::process_width(double w)
     circumference = (width+width+height+height);
 }
 
-void Square::process_height(double h)
+void Rectangle::process_height(double h)
 {
     height = h;
     width = height;
@@ -79,7 +86,7 @@ void Square::process_height(double h)
     circumference = (width+width+height+height);
 }
 
-void Square::process_area(double a)
+void Rectangle::process_area(double a)
 {
     area = a;
     width = (sqrt(area));
@@ -87,7 +94,7 @@ void Square::process_area(double a)
     circumference = ((width+height)*2);
 }
 
-void Square::process_circumference(double c)
+void Rectangle::process_circumference(double c)
 {
     circumference = c;
     width = (circumference/4);
@@ -95,16 +102,16 @@ void Square::process_circumference(double c)
     area = (width*height);
 }
 
-void Square::printMsg_squareStats()
+void Rectangle::printMsg_rectangleStats()
 {
-    cout << "\n\tSQUARE STATS" << endl;
+    cout << "\n\tRECTANGLE STATS" << endl;
     cout << "width: " << width << endl;
     cout << "height: " << height << endl;
     cout << "circumference: " << circumference << endl;
     cout << "area: " << area << "\n\n";
 }
 
-double get_num_square()
+double get_num_rectangle()
 {
     double input;
     cin >> input;

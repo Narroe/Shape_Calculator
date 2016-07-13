@@ -3,6 +3,7 @@
 #include<string>
 #include"Circle.h"
 #include"Square.h"
+#include"Rectangle.h"
 using namespace std;
 
 string get_input();
@@ -35,7 +36,7 @@ void printMsg_greeting()
 void printMsg_chooseShape()
 {
     cout << "\n\tChoose a shape:" << endl;
-    cout << "2D:    circle | square | NONE | NONE\n" << endl;
+    cout << "2D:    circle | square | rectangle | NONE\n" << endl;
     cout << "3D:    NONE | NONE | NONE | NONE\n" << endl;
     cout << "(note: you can also type quit/exit to end the program here)\n" << endl;
 }
@@ -61,6 +62,12 @@ void process_inputString_chooseShape(string input)
     {
         Square square;
         square.process_inputString(get_input());
+        reset_program();
+    }
+    else if (input == "rectangle")
+    {
+        Rectangle rectangle;
+        rectangle.process_inputString(get_input());
         reset_program();
     }
     else
