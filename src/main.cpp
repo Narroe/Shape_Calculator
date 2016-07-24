@@ -67,7 +67,7 @@ void process_inputString_chooseShape(string input)
     else if (input == "rectangle")
     {
         Rectangle rectangle;
-        rectangle.process_inputString(get_input());
+        rectangle.process_inputString(get_input(), 1);
         reset_program();
     }
     else

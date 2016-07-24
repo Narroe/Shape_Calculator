@@ -7,7 +7,7 @@ using namespace std;
 
 Rectangle::Rectangle()
 {
-    printMsg_selectKnownVar();
+    printMsg_selectKnownVar_1();
 }
 
 Rectangle::~Rectangle()
@@ -16,11 +16,12 @@ Rectangle::~Rectangle()
     height = 0;
     area = 0;
     circumference = 0;
-    knownVar = '0';
+    knownVar_1 = '0';
+    knownVar_2 = '0';
     cout << "\"Rectangle\" class object destroyed." << endl;
 }
 
-void Rectangle::printMsg_selectKnownVar()
+void Rectangle::printMsg_selectKnownVar_1()
 {
     std::cout << "\n[shape] Rectangle" << std::endl;
     std::cout << "[this shape requires TWO known variable types]" << std::endl;
@@ -34,40 +35,82 @@ void Rectangle::printMsg_selectKnownVar_2()
     std::cout << "[w]idth || [h]eight || [a]rea || [c]ircumference\n" << std::endl;
 }
 
-void Rectangle::process_inputString(string input)
+void Rectangle::process_inputString(string input, int knownVarNo)
 {
     if (input == "w" || input == "width")
     {
         cout << "width: ";
-        knownVar = 'w';
+
+        switch(knownVarNo)
+        {
+            case 1:
+                knownVar_1 = 'w';
+                break;
+            case 2:
+                knownVar_2 = 'w';
+                break;
+        }
+
         process_width(get_num_rectangle());
         printMsg_rectangleStats();
     }
     else if (input == "h" || input == "height")
     {
         cout << "height: ";
-        knownVar = 'h';
+
+        switch(knownVarNo)
+        {
+            case 1:
+                knownVar_1 = 'h';
+                break;
+            case 2:
+                knownVar_2 = 'h';
+                break;
+        }
+
         process_height(get_num_rectangle());
         printMsg_rectangleStats();
     }
     else if (input == "a" || input == "area")
     {
         cout << "area: ";
-        knownVar = 'a';
+
+        switch(knownVarNo)
+        {
+            case 1:
+                knownVar_1 = 'a';
+                break;
+            case 2:
+                knownVar_2 = 'a';
+                break;
+        }
+
         process_area(get_num_rectangle());
         printMsg_rectangleStats();
     }
     else if (input == "c" || input == "circumference")
     {
         cout << "circumference: ";
-        knownVar = 'c';
+
+        switch(knownVarNo)
+        {
+            case 1:
+                knownVar_1 = 'c';
+                break;
+            case 2:
+                knownVar_2 = 'c';
+                break;
+        }
+
         process_circumference(get_num_rectangle());
         printMsg_rectangleStats();
     }
     else
     {
-        cout << "\tERROR @ process_inputString (Square.cpp)\n" << endl;
+        cout << "\tERROR @ process_inputString (Rectangle.cpp)\n" << endl;
     }
+
+    cout << "no: " << knownVarNo << " | " << knownVar_1 << " | " << knownVar_2 << endl;
 }
 
 void Rectangle::process_width(double w)
